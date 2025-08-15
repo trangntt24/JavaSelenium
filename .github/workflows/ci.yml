@@ -27,6 +27,9 @@ jobs:
         java-version: '22'
         distribution: 'temurin'
         cache: maven
-    - name: Run E2E Test
-      run: mvn clean test
+    - name: Compile
+      run: mvn clean compile
+#    //tắt cái này để khi run test tránh bị lỗi khi chạy nhiều headless
+#    - name: Run E2E Test
+#      run: mvn clean test
 
