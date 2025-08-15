@@ -8,18 +8,19 @@ import org.testng.annotations.Test;
 
 public class ChromeTest {
 
-//    @Test
-//    public void normalModeTest(){
-//        //open browser
-//        WebDriver driver = new ChromeDriver();
-//        //navigate đến link web
-//        driver.get("https://www.selenium.dev/");
-//        //so sánh title web
-//        Assert.assertEquals(driver.getTitle(),"Selenium");
-//        //đóng browser
-//        driver.quit();
-//    }
+    @Test
+    public void normalModeTest(){
+        //open browser
+        WebDriver driver = new ChromeDriver();
+        //navigate đến link web
+        driver.get("https://www.selenium.dev/");
+        //so sánh title web
+        Assert.assertEquals(driver.getTitle(),"Selenium");
+        //đóng browser
+        driver.quit();
+    }
 
+    //chạy CI trên github
     @Test
     public void headlessModeTest(){
         ChromeOptions chromeOptions = new ChromeOptions();
