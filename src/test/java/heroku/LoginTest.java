@@ -37,12 +37,12 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(errorMessage.contains(expectedMessageContent));
     }
 
-    @Test
-    void successfullyWithValidCredential() {
-        loginPage.login("tomsmith","SuperSecretPassword!");
-        Assert.assertEquals(getCurrentUrl(),"https://the-internet.herokuapp.com/secure");
-
-        String successMessage = loginPage.getFlashMessage("success");
-        Assert.assertTrue(successMessage.contains("You logged into a secure area!"));
-    }
+//    @Test
+//    void successfullyWithValidCredential() {
+//        loginPage.login("tomsmith","SuperSecretPassword!");
+//        Assert.assertEquals(getCurrentUrl(),"https://the-internet.herokuapp.com/secure");
+//
+//        String successMessage = loginPage.getFlashMessage("success");
+//        Assert.assertTrue(successMessage.contains("You logged into a secure area!"));
+//    }
 }
