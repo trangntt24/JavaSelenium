@@ -28,15 +28,6 @@ public class LoginTest extends BaseTest {
         };
     }
 
-//    @Test
-//    void successfullyWithValidCredential() {
-//        loginPage.login("tomsmith","SuperSecretPassword!");
-//        Assert.assertEquals(getCurrentUrl(),"https://the-internet.herokuapp.com/secure");
-//
-//        String successMessage = loginPage.getFlashMessage("success");
-//        Assert.assertTrue(successMessage.contains("You logged into a secure area!"));
-//    }
-
     @Test(dataProvider = "testData") //ten trong ngoac phai giong o tren
     void errorWithInvalidCredential(String userName, String password, String expectedUrl, String expectedMessageType, String expectedMessageContent){
         loginPage.login(userName,password);
@@ -44,5 +35,14 @@ public class LoginTest extends BaseTest {
 
         String errorMessage = loginPage.getFlashMessage(expectedMessageType);
         Assert.assertTrue(errorMessage.contains(expectedMessageContent));
+    }
+
+    @Test
+    void successfullyWithValidCredential() {
+        loginPage.login("tomsmith","SuperSecretPassword!");
+        Assert.assertEquals(getCurrentUrl(),"https://the-internet.herokuapp.com/secure");
+
+        String successMessage = loginPage.getFlashMessage("success");
+        Assert.assertTrue(successMessage.contains("You logged into a secure area!"));
     }
 }
