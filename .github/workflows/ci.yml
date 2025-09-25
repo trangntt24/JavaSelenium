@@ -14,6 +14,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  id-token: write
+  contents: read
+  checks: write
 jobs:
   build:
 
@@ -27,7 +31,7 @@ jobs:
         java-version: '22'
         distribution: 'temurin'
         cache: maven
-    - name: Compile
+    - name: E2E Test
       run: mvn clean test
 #    //tắt cái này để khi run test tránh bị lỗi khi chạy nhiều headless
 #    - name: Run E2E Test
